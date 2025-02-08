@@ -31,8 +31,8 @@ const handleGenerales = async (p_fecha) => {
       };
 
       console.log(pdfData);
-      // await configMessage(student.celular, student.alumno, urlPDF, p_fecha); --> Envio de whatsapp con información de la bd
-      await configMessage('3114000218', "Carlos Amezcua", urlPDF, p_fecha);
+      // configMessage(student.celular, student.alumno, urlPDF, p_fecha); --> Envio de whatsapp con información de la bd
+      configMessage('3114000218', "Carlos Amezcua", urlPDF, p_fecha);
     }
   } catch (error) {
     console.error("Error", error);
