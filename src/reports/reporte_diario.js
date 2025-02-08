@@ -30,9 +30,9 @@ const handleGenerales = async (p_fecha) => {
         materias: detailedData,
       };
 
-      console.log(pdfData); --> Datos para el formato del pdf
+      console.log(pdfData);
       // await configMessage(student.celular, student.alumno, urlPDF, p_fecha); --> Envio de whatsapp con información de la bd
-      await configMessage('3114000218', "Carlos Amezcua", urlPDF, p_fecha); --> ejemplo de envio
+      await configMessage('3114000218', "Carlos Amezcua", urlPDF, p_fecha);
     }
   } catch (error) {
     console.error("Error", error);
