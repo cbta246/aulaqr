@@ -6,8 +6,8 @@ const ACCESS_TOKEN = process.env.REACT_APP_META_ACCESS_TOKEN;
 
 export const configMessage = async (
   recipientPhone,
-  urlPDF,
   studentName,
+  urlPDF,
   date
 ) => {
   const messageData = {
@@ -56,16 +56,15 @@ export const configMessage = async (
       {
         headers: {
           "Content-Type": "application/json",
-          Autorization: `Bearer ${ACCESS_TOKEN}`,
+          Authorization: `Bearer ${ACCESS_TOKEN}`,
         },
       }
     );
-
     console.log("Mensaje enviado:", response.data);
     return response.data;
   } catch (error) {
     console.error(
-      "Error al enviar mensaje de whatsapp:",
+      "Error enviando mensaje de WhatsApp:",
       error.response?.data || error.message
     );
     throw new Error("No se pudo enviar el mensaje");

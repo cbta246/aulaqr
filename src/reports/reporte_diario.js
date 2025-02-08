@@ -1,9 +1,10 @@
+import { configMessage } from "../config/configMessage.js";
 import { supabase } from "./../config/clientSupabase.js";
 
 const handleGenerales = async (p_fecha) => {
+  const urlPDF = "https://www.colonialtours.com/ebook/ebooks/ElPrincipito.pdf";
   try {
-    let { data, error } = await supabase
-    .rpc("get_datos_generales", {
+    let { data, error } = await supabase.rpc("get_datos_generales", {
       p_fecha,
     });
 
@@ -28,9 +29,10 @@ const handleGenerales = async (p_fecha) => {
         },
         materias: detailedData,
       };
-      
-      console.log(pdfData);
-      
+
+      // console.log(pdfData); --> Datos para el formato del pdf
+      // await configMessage(student.celular, student.alumno, urlPDF, p_fecha); --> Envio de whatsapp con información de la bd
+      // await configMessage('3114000218', "Carlos Amezcua", urlPDF, p_fecha); --> ejemplo de envio
     }
   } catch (error) {
     console.error("Error", error);
@@ -40,8 +42,7 @@ const handleGenerales = async (p_fecha) => {
 
 const handleDetallados = async (p_fecha, p_matricula) => {
   try {
-    let { data, error } = await supabase
-    .rpc("get_datos_detallados", {
+    let { data, error } = await supabase.rpc("get_datos_detallados", {
       p_fecha,
       p_matricula,
     });
