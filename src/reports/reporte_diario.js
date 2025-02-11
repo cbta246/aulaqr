@@ -18,7 +18,7 @@ const handleGenerales = async (p_fecha) => {
         estudiante: student.alumno,
         grupo: student.grupo,
         celular: student.celular,
-        materia: student.carrera || "Ofimática",
+        carrera: student.carrera,
         general: {
           total: student.total_asistencias,
           asistencias: student.asistencias,
