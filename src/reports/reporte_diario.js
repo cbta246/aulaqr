@@ -1,8 +1,8 @@
-import { configMessage } from "../config/configMessage.js";
+// import { configMessage } from "../config/configMessage.js";
 import { supabase } from "./../config/clientSupabase.js";
 
 const handleGenerales = async (p_fecha) => {
-  const urlPDF = "https://www.colonialtours.com/ebook/ebooks/ElPrincipito.pdf";
+  // const urlPDF = "https://www.colonialtours.com/ebook/ebooks/ElPrincipito.pdf";
   try {
     let { data, error } = await supabase.rpc("get_datos_generales", {
       p_fecha,
@@ -32,7 +32,7 @@ const handleGenerales = async (p_fecha) => {
 
       console.log(pdfData);
       // configMessage(student.celular, student.alumno, urlPDF, p_fecha); --> Envio de whatsapp con información de la bd
-      configMessage('3114000218', "Carlos Amezcua", urlPDF, p_fecha);
+      // configMessage('3114000218', "Carlos Amezcua", urlPDF, p_fecha);
     }
   } catch (error) {
     console.error("Error", error);
