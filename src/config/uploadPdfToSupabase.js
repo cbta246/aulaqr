@@ -13,7 +13,7 @@ const uploadPdfToSupabase = async (pdfFile, fileName) => {
   try {
     const sanitizedFileName = sanitizeFileName(fileName);
 
-    const { data, error } = await supabase.storage
+    const { error } = await supabase.storage
       .from("pdfs")
       .upload(sanitizedFileName, pdfFile, {
         upsert: true,
