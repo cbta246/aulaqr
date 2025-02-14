@@ -1,4 +1,5 @@
 import pdfMake from "pdfmake/build/pdfmake";
+// eslint-disable-next-line no-unused-vars
 import pdfFonts from "pdfmake/build/vfs_fonts";
 
 const generatePdf = async (estudiante) => {
