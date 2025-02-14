@@ -23,18 +23,6 @@ const mockSupabase = async (mock, type, args) => {
   return { data: response[type], error: null };
 };
 
-// const mostrarDocs = async (doc) => {
-//   doc.getBlob((blob) => {
-//     const blobUrl = URL.createObjectURL(blob);
-//     const a = document.createElement("a");
-//     a.href = blobUrl;
-//     a.innerText = "descargar";
-//     a.download = "example.pdf";
-//     document.body.appendChild(a);
-//     document.querySelector("#links").appendChild(a);
-//   });
-// };
-
 const validarKey = (obj, key) => {
   if (obj[key]) return obj[key];
   return `${key} no disponible`;
@@ -83,6 +71,7 @@ const handleGenerales = async (p_fecha) => {
         estudiante: validarKey(student, "alumno"),
         grupo: validarKey(student, "grupo"),
         materia: validarKey(detailedData.data, "materia"),
+        matricula: validarKey(student, "matricula"),
         general: {
           total: validarKey(student, "total_asistencias"),
           asistencias: validarKey(student, "asistencias"),
