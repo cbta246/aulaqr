@@ -1,4 +1,5 @@
 import pdfMake from "pdfmake/build/pdfmake";
+// eslint-disable-next-line no-unused-vars
 import pdfFonts from "pdfmake/build/vfs_fonts";
 
 const generatePdf = async (estudiante) => {
@@ -83,6 +84,11 @@ const generatePdf = async (estudiante) => {
             HELPERS.crearBrs(1),
             { text: `ESCUELA ${estudiante.escuela}`, style: 'title' },
             { text: HELPERS.getFecha(), style: 'paragraph' },
+            HELPERS.crearBrs(1),
+            { text: `Alumno: ${estudiante.estudiante}`, bold: true },
+			{ text: `Carrera: ${estudiante.materia}`, bold: true },
+			{ text: `No. Control: ${estudiante.matricula}`, bold: true },
+            { text: `Grupo: ${estudiante.grupo}`, bold: true },
             HELPERS.crearBrs(1),
             { text: 'Toda la información es del día especificado', alignment: 'center' },
             generarTabla('GENERAL'),
