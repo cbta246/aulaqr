@@ -1,4 +1,5 @@
-import reporte_diario from '../src/reports/reporte_diario.js'
+import reporte_diario from "../../src/reports/reporte_diario";
+
 
 export const handler = async (event) => {
   try {
