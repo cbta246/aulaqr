@@ -91,9 +91,9 @@ const handleGenerales = async (p_fecha) => {
         const pdfUrl = await uploadPdfToSupabase(pdfFile, fileName);
 
         if (pdfUrl) {
-          // configMessage("3114000218", estudiante.estudiante, pdfUrl, p_fecha)
           // configMessage("3111350563", estudiante.estudiante, pdfUrl, p_fecha)
-          configMessage("3117436503", estudiante.estudiante, pdfUrl, p_fecha)
+          // configMessage("3117436503", estudiante.estudiante, pdfUrl, p_fecha)
+          configMessage("3114000218", estudiante.estudiante, pdfUrl, p_fecha)
             .then((response) => console.log("Reporte enviado:", response))
             .catch((error) => console.error("Error al enviar reporte", error));
         } else {
